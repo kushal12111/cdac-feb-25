@@ -1,0 +1,73 @@
+class DecrementingLoop { 
+    public static void main(String[] args) { 
+        int total = 0; 
+        for (int i = 5; i > 0; i--) { 
+            total += i; 
+            if (i == 3) continue; 
+            total -= 1; 
+        } 
+        System.out.println(total); 
+    } 
+}
+
+
+
+Dry Run Steps:
+Initialization:
+
+total = 0
+
+i = 5
+
+First Iteration of the Loop (i = 5):
+
+total += i → total = 0 + 5 = 5
+
+if (i == 3) is false
+
+total -= 1 → total = 5 - 1 = 4
+
+Decrement i to 4
+
+Second Iteration of the Loop (i = 4):
+
+total += i → total = 4 + 4 = 8
+
+if (i == 3) is false
+
+total -= 1 → total = 8 - 1 = 7
+
+Decrement i to 3
+
+Third Iteration of the Loop (i = 3):
+
+total += i → total = 7 + 3 = 10
+
+if (i == 3) is true → continue (skips the remaining statements in this iteration)
+
+Decrement i to 2
+
+Fourth Iteration of the Loop (i = 2):
+
+total += i → total = 10 + 2 = 12
+
+if (i == 3) is false
+
+total -= 1 → total = 12 - 1 = 11
+
+Decrement i to 1
+
+Fifth Iteration of the Loop (i = 1):
+
+total += i → total = 11 + 1 = 12
+
+if (i == 3) is false
+
+total -= 1 → total = 12 - 1 = 11
+
+Decrement i to 0 (loop terminates)
+
+Guessed Output:
+The value of total after the loop completes is 11. Therefore, the output will be:
+
+11

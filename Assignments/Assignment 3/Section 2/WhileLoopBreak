@@ -1,0 +1,59 @@
+class WhileLoopBreak { 
+    public static void main(String[] args) { 
+        int count = 0; 
+        while (count < 5) { 
+            System.out.print(count + " "); 
+            count++; 
+            if (count == 3) break; 
+        } 
+        System.out.println(count); 
+    } 
+} 
+
+
+
+Dry Run Steps:
+Initialization:
+
+count = 0
+
+First Iteration of the Loop (count = 0):
+
+Condition count < 5 is true
+
+Print count: 0
+
+Increment count: count = 1
+
+Condition count == 3 is false
+
+Second Iteration of the Loop (count = 1):
+
+Condition count < 5 is true
+
+Print count: 1
+
+Increment count: count = 2
+
+Condition count == 3 is false
+
+Third Iteration of the Loop (count = 2):
+
+Condition count < 5 is true
+
+Print count: 2
+
+Increment count: count = 3
+
+Condition count == 3 is true
+
+Break the loop
+
+After the Loop:
+
+Print count: 3
+
+Guessed Output:
+The output will be:
+
+0 1 2 3

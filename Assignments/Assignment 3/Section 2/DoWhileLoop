@@ -1,0 +1,57 @@
+class DoWhileLoop { 
+    public static void main(String[] args) { 
+        int i = 1; 
+        do { 
+            System.out.print(i + " "); 
+            i++; 
+        } while (i < 5); 
+        System.out.println(i); 
+    } 
+} 
+
+
+Dry Run Steps:
+Initialization:
+
+i = 1
+
+First Iteration of the Loop:
+
+Print i: 1
+
+Increment i: i = 2
+
+Condition i < 5 is true
+
+Second Iteration of the Loop:
+
+Print i: 2
+
+Increment i: i = 3
+
+Condition i < 5 is true
+
+Third Iteration of the Loop:
+
+Print i: 3
+
+Increment i: i = 4
+
+Condition i < 5 is true
+
+Fourth Iteration of the Loop:
+
+Print i: 4
+
+Increment i: i = 5
+
+Condition i < 5 is false (loop terminates)
+
+After the Loop:
+
+Print i: 5
+
+Guessed Output:
+The output will be:
+
+1 2 3 4 5

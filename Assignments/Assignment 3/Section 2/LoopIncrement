@@ -1,0 +1,43 @@
+Dry Run Steps:
+Initialization:
+
+count = 0
+
+i = 0
+
+First Iteration of the Loop (i = 0):
+
+i++: Post-increment i (uses the current value before incrementing), so i is 0 but then becomes 1
+
+Expression so far: count += 0 - ++i
+
+++i: Pre-increment i (increments before using it), so i becomes 2
+
+Expression so far: count += 0 - 2
+
+count = count + (0 - 2) → count = 0 - 2 = -2
+
+Increment i for next loop iteration: i becomes 3
+
+Second Iteration of the Loop (i = 3):
+
+i++: Post-increment i (uses the current value before incrementing), so i is 3 but then becomes 4
+
+Expression so far: count += 3 - ++i
+
+++i: Pre-increment i (increments before using it), so i becomes 5
+
+Expression so far: count += 3 - 5
+
+count = count + (3 - 5) → count = -2 + (-2) = -4
+
+Increment i for next loop iteration: i becomes 6
+
+Third Iteration of the Loop (i = 6):
+
+The condition i < 4 is false (since i = 6), so the loop terminates.
+
+Guessed Output:
+The value of count after the loop completes is -4. Therefore, the output will be:
+
+-4
