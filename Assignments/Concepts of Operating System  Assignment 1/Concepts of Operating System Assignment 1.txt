@@ -1,0 +1,484 @@
+Problem 1-
+
+a.
+
+cd ~                  
+ls                    
+
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment    
+else
+    mkdir LinuxAssignment 
+    cd LinuxAssignment    
+fi
+
+--------------------------------------------------------------------------------------------------------------------------------------
+b.
+
+cd ~                            
+ls                              
+
+
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment          
+else
+    mkdir LinuxAssignment       
+    cd LinuxAssignment          
+fi
+
+touch file1.txt                 
+cat file1.txt                   
+
+--------------------------------------------------------------------------------------------------------------------------------------
+c.
+
+cd ~                            
+ls                              
+
+
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment          
+else
+    mkdir LinuxAssignment       
+    cd LinuxAssignment          
+fi
+
+touch file1.txt                 
+cat file1.txt                   
+
+mkdir docs                      
+ls                              
+
+--------------------------------------------------------------------------------------------------------------------------------------
+d.
+
+cd ~                            
+ls                              
+
+
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment          
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment   
+fi
+
+touch file1.txt                 
+cat file1.txt                   
+
+mkdir docs                      
+ls                              
+
+cp file1.txt docs/file2.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------
+e.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+f.
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+--------------------------------------------------------------------------------------------------------------------------------------
+
+g.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+--------------------------------------------------------------------------------------------------------------------------------------
+
+h.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+--------------------------------------------------------------------------------------------------------------------------------------
+
+i.
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+--------------------------------------------------------------------------------------------------------------------------------------
+j.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+
+--------------------------------------------------------------------------------------------------------------------------------------
+k.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Problem 2-
+
+a.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+head -n 10 data.txt
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+b.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+head -n 10 data.txt
+tail -n 5 data.txt
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+d.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+head -n 10 data.txt
+tail -n 5 data.txt
+head -n 15 numbers.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+e.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+head -n 10 data.txt
+tail -n 5 data.txt
+head -n 15 numbers.txt
+tail -n 3 numbers.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------
+e.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+head -n 10 data.txt
+tail -n 5 data.txt
+head -n 15 numbers.txt
+tail -n 3 numbers.txt
+tr '[:lower:]' '[:upper:]' < input.txt > output.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------
+f.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+head -n 10 data.txt
+tail -n 5 data.txt
+head -n 15 numbers.txt
+tail -n 3 numbers.txt
+tr '[:lower:]' '[:upper:]' < input.txt > output.txt
+sort duplicate.txt | uniq
+
+--------------------------------------------------------------------------------------------------------------------------------------
+g.
+
+cd ~
+ls
+if [ -d "LinuxAssignment" ]; then
+    cd LinuxAssignment
+else
+    mkdir LinuxAssignment
+    cd LinuxAssignment
+fi
+touch file1.txt
+cat file1.txt
+mkdir docs
+ls
+cp file1.txt docs/file2.txt
+chmod 744 docs/file2.txt
+chown $USER docs/file2.txt
+ls
+ls /
+find . -name "*.txt"
+grep "specific_word" filename.txt
+date
+hostname -I
+ping remote_server_address
+zip -r docs.zip docs
+unzip docs.zip -d new_directory
+echo "Your new text goes here" > file1.txt
+sed -i 's/original_word/replacement_word/g' file1.txt
+head -n 10 data.txt
+tail -n 5 data.txt
+head -n 15 numbers.txt
+tail -n 3 numbers.txt
+tr '[:lower:]' '[:upper:]' < input.txt > output.txt
+sort duplicate.txt | uniq
+sort fruit.txt | uniq -c
