@@ -1,0 +1,147 @@
+1.
+CREATE TABLE SEMP (
+    EMPNO CHAR(4),
+    EMPNAME CHAR(20),
+    BASIC FLOAT,
+    DEPTNO CHAR(2),
+    DEPTHEAD CHAR(4)
+);
+
+2.
+CREATE TABLE SDEPT (
+    DEPTNO CHAR(2),
+    DEPTNAME CHAR(15)
+);
+
+3.
+INSERT INTO SDEPT (DEPTNO, DEPTNAME)
+VALUES 
+    ('10', 'Development'),
+    ('20', 'Training');
+
+4.
+INSERT INTO SEMP (EMPNO, EMPNAME, BASIC, DEPTNO, DEPTHEAD)
+VALUES
+    ('0001', 'SUNIL', 6000, '10', NULL),
+    ('0002', 'HIREN', 8000, '20', NULL),
+    ('0003', 'ALI', 4000, '10', '0001'),
+    ('0004', 'GEORGE', 6000, NULL, '0002');
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Table S(Supplier):
+CREATE TABLE S (
+    S# CHAR(2),
+    Sname CHAR(20),
+    Status INT,
+    City CHAR(20)
+);
+
+Table P(Parts):
+CREATE TABLE P (
+    P# CHAR(2),
+    Pname CHAR(20),
+    Color CHAR(10),
+    Weight FLOAT,
+    City CHAR(20)
+);
+
+Table J(Projects):
+CREATE TABLE J (
+    J# CHAR(2),
+    Jname CHAR(20),
+    City CHAR(20)
+);
+
+Table SPJ(Supplier-Parts-Project):
+CREATE TABLE SPJ (
+    S# CHAR(2),
+    P# CHAR(2),
+    J# CHAR(2),
+    Qty INT
+);
+
+
+Inserting Sample Data:
+
+For S:
+INSERT INTO S (S#, Sname, Status, City)
+VALUES
+    ('S1', 'Supplier1', 10, 'CityA'),
+    ('S2', 'Supplier2', 20, 'CityB'),
+    ('S3', 'Supplier3', 30, 'CityC');
+
+For P:
+INSERT INTO P (P#, Pname, Color, Weight, City)
+VALUES
+    ('P1', 'Part1', 'Red', 5.5, 'CityA'),
+    ('P2', 'Part2', 'Blue', 3.0, 'CityB'),
+    ('P3', 'Part3', 'Green', 7.2, 'CityC');
+
+For J:
+INSERT INTO J (J#, Jname, City)
+VALUES
+    ('J1', 'Project1', 'CityA'),
+    ('J2', 'Project2', 'CityB'),
+    ('J3', 'Project3', 'CityC');
+
+For SPJ:
+INSERT INTO SPJ (S#, P#, J#, Qty)
+VALUES
+    ('S1', 'P1', 'J1', 100),
+    ('S2', 'P2', 'J2', 200),
+    ('S3', 'P3', 'J3', 150);
+------------------------------------------------------------------------------------------------------------------------------------------
+5.
+SELECT * FROM S;
+
+6.
+SELECT S#, Sname FROM S;
+
+7.
+SELECT Pname, Color
+FROM P
+WHERE City = 'London';
+
+8.
+SELECT *
+FROM S
+WHERE City = 'London';
+
+9.
+SELECT *
+FROM S
+WHERE City IN ('Paris', 'Athens');
+
+10.
+SELECT *
+FROM J
+WHERE City = 'Athens';
+
+11.
+SELECT Pname
+FROM P
+WHERE Weight BETWEEN 12 AND 14;
+
+12.
+SELECT *
+FROM S
+WHERE Status >= 20;
+
+13.
+SELECT *
+FROM S
+WHERE City <> 'London';
+
+14.
+SELECT DISTINCT City
+FROM S;
+
+15.
+SELECT Pname,
+       Weight * 1000 AS Weight_in_Milligrams,
+       Weight / 1000 AS Weight_in_Kilograms
+FROM P;
+
+

@@ -1,0 +1,45 @@
+1.
+SELECT CONCAT(UPPER(LEFT(Sname, 1)), LOWER(SUBSTRING(Sname, 2))) AS Capitalized_Name
+FROM S;
+
+2.
+SELECT UPPER(Sname) AS Uppercase_Name
+FROM S;
+
+3.
+SELECT LOWER(Sname) AS Lowercase_Name
+FROM S;
+
+4.
+SELECT LPAD(Sname, 25, ' ') AS Padded_Name
+FROM S;
+
+5.
+SELECT REPLACE(Sname, 'la', 'ro') AS Modified_Name
+FROM S;
+
+6.
+SELECT REPLACE(REPLACE(Sname, 'l', 'r'), 'a', 'o') AS Modified_Name
+FROM S;
+
+7.
+SELECT Sname, LENGTH(Sname) AS Name_Length
+FROM S;
+
+8.
+SELECT *
+FROM S
+WHERE SOUNDEX(Sname) = SOUNDEX('BLOKE');
+
+9.
+SELECT Sname,
+       CASE Status
+           WHEN 10 THEN 'Ten'
+           WHEN 20 THEN 'Twenty'
+           WHEN 30 THEN 'Thirty'
+           ELSE 'Other'
+       END AS Status_Description
+FROM S;
+
+10.
+SELECT DAYNAME(CURDATE()) AS Current_Day;

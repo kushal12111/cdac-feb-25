@@ -1,0 +1,65 @@
+1.
+SELECT Supplier.Name AS Supplier_Name, Sales.Quantity 
+FROM Supplier
+JOIN Sales ON Supplier.SupplierID = Sales.SupplierID;
+
+2.
+SELECT Parts.PartName AS Part_Name, Sales.Quantity 
+FROM Parts
+JOIN Sales ON Parts.PartID = Sales.PartID;
+
+3.
+SELECT Projects.ProjectName AS Project_Name, Sales.Quantity 
+FROM Projects
+JOIN Sales ON Projects.ProjectID = Sales.ProjectID;
+
+4.
+SELECT Supplier.Name AS Supplier_Name, Parts.PartName AS Part_Name, 
+       Projects.ProjectName AS Project_Name, Sales.Quantity 
+FROM Sales
+JOIN Supplier ON Sales.SupplierID = Supplier.SupplierID
+JOIN Parts ON Sales.PartID = Parts.PartID
+JOIN Projects ON Sales.ProjectID = Projects.ProjectID;
+
+5.
+SELECT DISTINCT Supplier.Name AS Supplier_Name
+FROM Supplier
+JOIN Sales ON Supplier.SupplierID = Sales.SupplierID
+JOIN Projects ON Sales.ProjectID = Projects.ProjectID
+WHERE Supplier.City = Projects.City;
+
+6.
+SELECT Parts.PartName AS Part_Name, Sales.Quantity 
+FROM Parts
+JOIN Sales ON Parts.PartID = Sales.PartID
+WHERE Parts.Color = 'Red';
+
+7.
+SELECT Sales.Quantity 
+FROM Supplier
+JOIN Sales ON Supplier.SupplierID = Sales.SupplierID
+WHERE Supplier.Status = 20;
+
+8.
+SELECT Parts.PartName AS Part_Name, Sales.Quantity 
+FROM Parts
+JOIN Sales ON Parts.PartID = Sales.PartID
+WHERE Parts.Weight > 14;
+
+9.
+SELECT Projects.ProjectName AS Project_Name, Projects.City 
+FROM Projects
+JOIN Sales ON Projects.ProjectID = Sales.ProjectID
+GROUP BY Projects.ProjectName, Projects.City
+HAVING SUM(Sales.Quantity) > 500;
+
+10.
+SELECT Parts.PartName AS Part_Name, Sales.Quantity 
+FROM Parts
+JOIN Sales ON Parts.PartID = Sales.PartID
+WHERE Parts.Weight < 15;
+
+11.
+SELECT Employee.Name AS Employee_Name, Manager.Name AS Manager_Name 
+FROM Employee
+LEFT JOIN Employee AS Manager ON Employee.ManagerID = Manager.EmployeeID;

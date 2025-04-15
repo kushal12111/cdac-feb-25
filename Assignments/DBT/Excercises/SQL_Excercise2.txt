@@ -1,0 +1,37 @@
+1.
+SELECT *
+FROM S
+ORDER BY City DESC;
+
+2.
+SELECT *
+FROM P
+ORDER BY City ASC, Pname ASC;
+
+3.
+SELECT *
+FROM S
+WHERE Status BETWEEN 10 AND 20;
+
+4.
+SELECT Pname, Weight
+FROM P
+WHERE Weight NOT BETWEEN 10 AND 15;
+
+5.
+SELECT Pname
+FROM P
+WHERE Pname LIKE 'S%';
+
+6.
+SELECT *
+FROM S
+WHERE City LIKE 'L%';
+
+7.
+SELECT *
+FROM J
+WHERE Jname LIKE '__n%';
+
+
+

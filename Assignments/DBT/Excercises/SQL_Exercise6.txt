@@ -1,0 +1,46 @@
+1.
+SELECT * 
+FROM Suppliers 
+WHERE Status = (SELECT Status FROM Suppliers WHERE Name = 'CLARK');
+
+2.
+SELECT * 
+FROM Employees 
+WHERE DepartmentID = (SELECT DepartmentID FROM Employees WHERE Name = 'MILLER');
+
+3.
+SELECT * 
+FROM Parts 
+WHERE Weight > ALL (SELECT Weight FROM Parts WHERE Color = 'Red');
+
+4.
+SELECT * 
+FROM Projects 
+WHERE City = (SELECT City FROM Projects WHERE Name = 'TAPE');
+
+5.
+SELECT * 
+FROM Parts 
+WHERE Weight < ALL (SELECT Weight FROM Parts WHERE Color = 'Green');
+
+6.
+SELECT SupplierName 
+FROM Sales 
+WHERE Quantity = (SELECT MAX(Quantity) FROM Sales);
+
+7.
+SELECT Name 
+FROM Employees 
+WHERE Salary = (SELECT MIN(Salary) FROM Employees);
+
+8.
+SELECT SupplierName 
+FROM Sales 
+GROUP BY SupplierName 
+ORDER BY SUM(Quantity) DESC 
+LIMIT 1;
+
+9.
+SELECT DepartmentName 
+FROM Departments 
+WHERE DepartmentID = (SELECT DepartmentID FROM Employees GROUP BY DepartmentID ORDER BY COUNT(*) DESC LIMIT 1);

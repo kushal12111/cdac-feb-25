@@ -1,0 +1,45 @@
+1.
+SELECT MIN(Status) AS Minimum_Status FROM Supplier;
+
+2.
+SELECT MAX(Weight) AS Maximum_Weight FROM Parts;
+
+3.
+SELECT AVG(Weight) AS Average_Weight FROM Parts;
+
+4.
+SELECT SUM(Quantity) AS Total_Quantity_Sold FROM Sales WHERE PartID = 'P1';
+
+5.
+SELECT PartID, SUM(Quantity) AS Total_Quantity_Sold FROM Sales GROUP BY PartID;
+
+6.
+SELECT PartID, AVG(Quantity) AS Average_Quantity_Sold FROM Sales GROUP BY PartID;
+
+7.
+SELECT PartID, MAX(Quantity) AS Max_Quantity_Sold
+FROM Sales
+GROUP BY PartID
+HAVING MAX(Quantity) > 800;
+
+8.
+SELECT Status, COUNT(*) AS Supplier_Count
+FROM Supplier
+GROUP BY Status;
+
+9.
+SELECT City, COUNT(*) AS Project_Count
+FROM Projects
+GROUP BY City;
+
+10.
+SELECT 
+    CASE 
+        WHEN Status = 10 THEN 'Ten'
+        WHEN Status = 20 THEN 'Twenty'
+        WHEN Status = 30 THEN 'Thirty'
+        ELSE CAST(Status AS VARCHAR) 
+    END AS Status,
+    COUNT(*) AS Count
+FROM Supplier
+GROUP BY Status;
