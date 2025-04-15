@@ -1,0 +1,13 @@
+1.
+SELECT S1.SalespersonID AS Salesperson1_ID, S2.SalespersonID AS Salesperson2_ID, S1.City
+FROM Salespeople S1
+JOIN Salespeople S2 ON S1.City = S2.City AND S1.SalespersonID < S2.SalespersonID;
+
+2.
+SELECT Customers.CustomerName, Customers.City
+FROM Customers
+WHERE Customers.Rating = (
+    SELECT Rating
+    FROM Customers
+    WHERE CustomerName = 'Hoffman'
+);

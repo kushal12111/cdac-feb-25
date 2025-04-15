@@ -1,0 +1,29 @@
+1.
+INSERT INTO Multicust
+SELECT *
+FROM Salespeople
+WHERE ID IN (
+    SELECT SalespersonID
+    FROM Customers
+    GROUP BY SalespersonID
+    HAVING COUNT(CustomerID) > 1
+);
+
+
+
+2.
+DELETE FROM Customers
+WHERE ID NOT IN (
+    SELECT CustomerID
+    FROM Orders
+);
+
+3.
+UPDATE Salespeople
+SET Commission = Commission * 1.20
+WHERE ID IN (
+    SELECT SalespersonID
+    FROM Orders
+    GROUP BY SalespersonID
+    HAVING SUM(Amount) > 3000
+);

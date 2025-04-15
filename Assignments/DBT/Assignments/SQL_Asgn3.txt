@@ -1,0 +1,6 @@
+1.
+Yes, ANSI SQL does recognize the DATE data type. It is used to store calendar dates, including year, month, and day. This data type is widely supported in most SQL databases, allowing consistent handling of date values across platforms.
+
+
+2.
+The Data Manipulation Language (DML) subdivision of SQL is used for inserting values into tables. The INSERT statement, which is a part of DML, allows you to add rows to a table.

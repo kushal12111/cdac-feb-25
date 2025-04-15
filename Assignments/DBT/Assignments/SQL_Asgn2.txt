@@ -1,0 +1,12 @@
+1.
+The primary key of the CUSTOMERS table is Cnum (Customer Number). It uniquely identifies each customer in the table
+
+2.
+The 4th column of the CUSTOMERS table is Rating.
+
+3.
+- Another word for row is record or tuple.
+- Another word for column is field or attribute.
+
+4.
+In SQL, there is no inherent ordering of rows in a table unless specified using an ORDER BY clause. This means that rows in a table are stored without any guaranteed order, and “the first five rows” cannot be seen directly unless explicitly retrieved using a query like LIMIT, TOP, or similar clauses, depending on the SQL database.

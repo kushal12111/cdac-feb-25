@@ -1,0 +1,22 @@
+1.
+SELECT * 
+FROM Orders 
+WHERE cnum = (SELECT cnum FROM Customers WHERE cname = 'Cisneros');
+
+2.
+SELECT cname, rating 
+FROM Customers 
+WHERE cnum IN (
+    SELECT cnum 
+    FROM Orders 
+    GROUP BY cnum 
+    HAVING SUM(amount) > (SELECT AVG(SUM(amount)) 
+                          FROM Orders 
+                          GROUP BY cnum)
+);
+
+3.
+SELECT salesperson_id, SUM(amount) AS total_amount 
+FROM Orders 
+GROUP BY salesperson_id 
+HAVING SUM(amount) > (SELECT MAX(amount) FROM Orders);

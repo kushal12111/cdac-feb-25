@@ -1,0 +1,42 @@
+1.
+SELECT * 
+FROM Customers 
+WHERE Rating >= ANY (
+    SELECT Rating 
+    FROM Customers 
+    WHERE Name = 'Serres'
+);
+
+2.
+SELECT * 
+FROM Salespeople 
+WHERE City <> ALL (
+    SELECT City 
+    FROM Customers 
+    WHERE Customers.SalespersonID = Salespeople.ID
+);
+
+3.
+SELECT * 
+FROM Orders 
+WHERE Amount > ANY (
+    SELECT Amount 
+    FROM Orders 
+    WHERE CustomerID IN (
+        SELECT ID 
+        FROM Customers 
+        WHERE City = 'London'
+    )
+);
+
+4.
+SELECT * 
+FROM Orders 
+WHERE Amount > (SELECT MIN(Amount) 
+                FROM Orders 
+                WHERE CustomerID IN (
+                    SELECT ID 
+                    FROM Customers 
+                    WHERE City = 'London'
+                )
+);

@@ -1,0 +1,24 @@
+1.
+SELECT Orders.OrderNumber, Customers.CustomerName 
+FROM Orders 
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+2.
+SELECT Orders.OrderNumber, Salespeople.Name AS Salesperson_Name, Customers.CustomerName 
+FROM Orders 
+JOIN Salespeople ON Orders.SalespersonID = Salespeople.SalespersonID 
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+3.
+SELECT Customers.CustomerName, Salespeople.Name AS Salesperson_Name, Salespeople.CommissionRate 
+FROM Orders 
+JOIN Salespeople ON Orders.SalespersonID = Salespeople.SalespersonID 
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID 
+WHERE Salespeople.CommissionRate > 12;
+
+4.
+SELECT Orders.OrderNumber, (Orders.OrderAmount * Salespeople.CommissionRate / 100) AS Commission_Amount 
+FROM Orders 
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID 
+JOIN Salespeople ON Orders.SalespersonID = Salespeople.SalespersonID 
+WHERE Customers.Rating > 100;

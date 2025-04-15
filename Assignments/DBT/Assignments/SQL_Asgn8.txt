@@ -1,0 +1,29 @@
+1.
+SELECT 
+    OrderNumber, 
+    SalespersonID, 
+    (OrderAmount * 0.12) AS Commission_Amount
+FROM Orders;
+
+2.
+SELECT 
+    CONCAT('For the city ', City, ', the highest rating is: ', MAX(Rating)) AS Result
+FROM Customers
+GROUP BY City;
+
+3.
+SELECT 
+    Rating, 
+    CustomerName, 
+    CustomerID
+FROM Customers
+ORDER BY Rating DESC;
+
+
+4.
+SELECT 
+    OrderDate, 
+    SUM(OrderAmount) AS Total_Orders
+FROM Orders
+GROUP BY OrderDate
+ORDER BY Total_Orders DESC;
