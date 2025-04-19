@@ -1,0 +1,25 @@
+1.
+DELIMITER //
+CREATE PROCEDURE Comp_intr(IN p DECIMAL(10,2), IN r DECIMAL(10,4), IN y INT)
+BEGIN
+    DECLARE I DECIMAL(10,2);
+    DECLARE total_amount DECIMAL(10,2);
+    
+    SET total_amount = p * POWER(1 + r, y);
+    SET I = total_amount - p;
+
+    INSERT INTO tempp (Interest, TotalAmount)
+    VALUES (I, total_amount);
+END //
+DELIMITER ;
+
+
+
+2.
+DELIMITER //
+CREATE FUNCTION Age_calc(dob DATE)
+RETURNS INT
+BEGIN
+    RETURN TIMESTAMPDIFF(YEAR, dob, CURDATE());
+END //
+DELIMITER ;

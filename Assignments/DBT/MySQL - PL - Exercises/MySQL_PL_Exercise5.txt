@@ -1,0 +1,38 @@
+1.
+DELIMITER //
+CREATE FUNCTION isValidTriangle(a INT, b INT, c INT)
+RETURNS BOOLEAN
+BEGIN
+    RETURN a + b > c AND a + c > b AND b + c > a;
+END //
+DELIMITER ;
+
+
+
+2.
+DELIMITER //
+CREATE FUNCTION randomNumber()
+RETURNS INT
+BEGIN
+    RETURN FLOOR(1 + (RAND() * 10));
+END //
+DELIMITER ;
+
+
+
+3.
+DELIMITER //
+CREATE FUNCTION swapCharacters(inputString VARCHAR(255))
+RETURNS VARCHAR(255)
+BEGIN
+    DECLARE swappedString VARCHAR(255);
+    DECLARE n INT;
+    SET n = LENGTH(inputString);
+    SET swappedString = '';
+    WHILE n > 0 DO
+        SET swappedString = CONCAT(swappedString, SUBSTRING(inputString, n, 1));
+        SET n = n - 1;
+    END WHILE;
+    RETURN swappedString;
+END //
+DELIMITER ;

@@ -1,0 +1,33 @@
+1.
+SELECT number
+FROM any_table
+WHERE number BETWEEN 1 AND 10;
+
+
+
+2.
+SELECT side1, side2, side3
+FROM any_table
+WHERE side1 + side2 > side3
+  AND side1 + side3 > side2
+  AND side2 + side3 > side1;
+
+
+
+3.
+SELECT year,
+       CASE
+           WHEN (year % 4 = 0 AND year % 100 != 0) OR (year % 4 = 0 AND year % 400 = 0) THEN 'Leap Year'
+           ELSE 'Not a Leap Year'
+       END AS result
+FROM any_table;
+
+
+
+4.
+SELECT string1, string2,
+       CASE
+           WHEN string1 LIKE CONCAT('%', string2, '%') THEN 'Exists'
+           ELSE 'Does Not Exist'
+       END AS result
+FROM any_table;

@@ -1,0 +1,68 @@
+1.
+DELIMITER //
+CREATE TRIGGER before_insert_ord_dtl
+BEFORE INSERT ON Ord_dtl
+FOR EACH ROW
+BEGIN
+    UPDATE Prod_mst
+    SET Booked_qty = Booked_qty + NEW.Qty
+    WHERE Prod_cd = NEW.Prod_cd;
+END //
+DELIMITER ;
+
+
+
+2.
+DELIMITER //
+CREATE TRIGGER before_delete_ord_dtl
+BEFORE DELETE ON Ord_dtl
+FOR EACH ROW
+BEGIN
+    UPDATE Prod_mst
+    SET Booked_qty = Booked_qty - OLD.Qty
+    WHERE Prod_cd = OLD.Prod_cd;
+END //
+DELIMITER ;
+
+
+
+3.
+DELIMITER //
+CREATE TRIGGER before_update_ord_dtl
+BEFORE UPDATE ON Ord_dtl
+FOR EACH ROW
+BEGIN
+    IF OLD.Prod_cd != NEW.Prod_cd THEN
+        UPDATE Prod_mst
+        SET Booked_qty = Booked_qty - OLD.Qty
+        WHERE Prod_cd = OLD.Prod_cd;
+        
+        UPDATE Prod_mst
+        SET Booked_qty = Booked_qty + NEW.Qty
+        WHERE Prod_cd = NEW.Prod_cd;
+    ELSEIF OLD.Qty != NEW.Qty THEN
+        UPDATE Prod_mst
+        SET Booked_qty = Booked_qty - OLD.Qty + NEW.Qty
+        WHERE Prod_cd = NEW.Prod_cd;
+    END IF;
+END //
+DELIMITER ;
+
+
+
+4.
+DELIMITER //
+CREATE TRIGGER before_update_status_ord_mst
+BEFORE UPDATE ON Ord_mst
+FOR EACH ROW
+BEGIN
+    IF OLD.Status = 'P' AND NEW.Status = 'D' THEN
+        UPDATE Prod_mst
+        SET Booked_qty = Booked_qty - (SELECT Qty FROM Ord_dtl WHERE Ord_no = OLD.Ord_no),
+            Qty_in_stock = Qty_in_stock - (SELECT Qty FROM Ord_dtl WHERE Ord_no = OLD.Ord_no)
+        WHERE Prod_cd IN (SELECT Prod_cd FROM Ord_dtl WHERE Ord_no = OLD.Ord_no);
+    ELSEIF OLD.Status = 'P' AND NEW.Status = 'C' THEN
+        DELETE FROM Ord_dtl WHERE Ord_no = OLD.Ord_no;
+    END IF;
+END //
+DELIMITER ;

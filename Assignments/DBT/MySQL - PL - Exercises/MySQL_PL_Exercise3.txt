@@ -1,0 +1,58 @@
+1.
+SET @I = 1;
+
+WHILE @I <= 1000 DO
+    IF @I % 100 = 0 THEN
+        SELECT @I;
+    END IF;
+    SET @I = @I + 1;
+END WHILE;
+
+
+
+
+2.
+SELECT num
+FROM (
+    SELECT num,
+           FLOOR(num / 100) AS hundreds,
+           FLOOR((num % 100) / 10) AS tens,
+           num % 10 AS units
+    FROM (SELECT generate_series(1, 999) AS num) AS numbers
+) AS digits
+WHERE (hundreds^3 + tens^3 + units^3) = num;
+
+
+
+3.
+SELECT radius,
+       2 * PI() * radius AS circumference,
+       PI() * radius * radius AS area,
+       (4/3) * PI() * POWER(radius, 3) AS volume
+FROM (
+    SELECT @min_radius + (@increment * seq) AS radius
+    FROM (SELECT generate_series(0, FLOOR((@max_radius - @min_radius) / @increment)) AS seq) AS radii
+) AS result
+WHERE radius BETWEEN @min_radius AND @max_radius;
+
+
+
+4.
+SELECT word,
+       CASE
+           WHEN word = REVERSE(word) THEN 'Palindrome'
+           ELSE 'Not a Palindrome'
+       END AS result
+FROM any_table
+WHERE LENGTH(word) = 5;
+
+
+
+5.
+SELECT word,
+       LENGTH(word) AS length,
+       CASE
+           WHEN word = REVERSE(word) THEN 'Palindrome'
+           ELSE 'Not a Palindrome'
+       END AS result
+FROM any_table;
